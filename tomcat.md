@@ -26,7 +26,6 @@
 
 `sudo sh -c 'chmod +x /opt/tomcat/latest/bin/*.sh'`
 
-
 #### [Создаем сервис для старта Tomcat](https://linuxize.com/post/how-to-install-tomcat-9-on-ubuntu-20-04/#creating-systemd-unit-file)
 
 7. Создаем  _tomcat.service_:  

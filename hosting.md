@@ -32,7 +32,7 @@
 - **Виртуальный выделенный сервер** - дешевый, с полным доступом к администрированию по ssh и с публичным IP для доступа.  
   Если планируется только одно небольшое приложение - можно выбирать самый недорогой тариф: **RAM 1G, SSD от 10Gb, публичный IP**.
     - [FirstVDS](https://firstvds.ru/?from=1119260), попробуйте с промокодом `6481119260`
-    - [RUVDS](https://ruvds.com/),[HOSTING RUSSIA](https://hosting-russia.ru/tariffs), [VPSdedic](https://vpsdedic.ru/vpsserver.html), [Timeweb](https://timeweb.com/ru/services/vds/), [VpsVille](https://vpsville.ru/vds-vps-hosting/)
+    - [MakeCloud](https://makecloud.ru/), [RUVDS](https://ruvds.com/ru-rub/pricing#order), [HOSTING RUSSIA](https://hosting-russia.ru/tariffs), [VPSdedic](https://vpsdedic.ru/vpsserver.html), [Timeweb](https://timeweb.com/ru/services/vds/), [Джино](https://jino.ru/vps/), [VpsVille](https://vpsville.ru/vds-vps-hosting/)
 
 - Настройка сервера:
     - ОС: последний [Ubuntu](https://ru.wikipedia.org/wiki/Ubuntu) (самый популярный GNU Linux), если нет особых предпочтений.

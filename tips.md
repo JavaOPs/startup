@@ -1,0 +1,1 @@
+[При падении по OOM - пространство подкачки](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-18-04-ru)

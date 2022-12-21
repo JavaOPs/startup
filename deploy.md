@@ -21,18 +21,19 @@ _reflect.InaccessibleObjectException: Unable to make field private final int jav
 
 #### TopJava
 
-Делаем `mvn -DskipTests=true package` и проверяем _[PROJECT_DIR]/target/topjava.war/WEB-INF/classes/db/vds.properties_
+Локально собираем WAR: `mvn -DskipTests=true package`
 
-Создаем каталог, куда будет указывать _TOPJAVA_ROOT_ с правами для всех: `sudo mkdir -m 777 /opt/topjava`  
+Создаем на сервере каталог, куда будет указывать _TOPJAVA_ROOT_ с правами для всех: `sudo mkdir -m 777 /opt/topjava`  
+Копируем в _TOPJAVA_ROOT_ каталог _/config/messages_ с локализацией и проперти DB: _/config/db.properties_
+
 Добавляем для Tomcat свои переменные окружения в скрипт _setenv.sh_: `sudo mcedit /opt/tomcat/latest/bin/setenv.sh`    
 Записываем туда
 ```
 export TOPJAVA_ROOT=/opt/topjava
-export CATALINA_OPTS="$CATALINA_OPTS -Dspring.profiles.active='datajpa,vds'"
+export CATALINA_OPTS="$CATALINA_OPTS -Dspring.profiles.active=datajpa,vds"
 ```
-
-И делаем его исполняемым: `sudo chmod +x /opt/tomcat/latest/bin/setenv.sh`   
-Копируем в _TOPJAVA_ROOT_ каталог _/config/messages_ с локализацией
+И делаем его исполняемым: `sudo chmod +x /opt/tomcat/latest/bin/setenv.sh`  
+Наше приложение будет запускаться с профилями `datajpa,vds`  
 
 -----------------------
 
@@ -41,7 +42,7 @@ export CATALINA_OPTS="$CATALINA_OPTS -Dspring.profiles.active='datajpa,vds'"
 
 Открываем в браузере Tomcat Manager: _http://[сервер_IP_или_домен]:8080/manager_ (пароль для него вы задавали при установки Tomcat в _tomcat-users.xml_)  
 
-- В **"WAR file to deploy"** выбираем наш _war_ и деплоим
+- В **"WAR file to deploy"** выбираем наш _war_ и деплоим его
 
 Наконец, делаем перенаправление порта 80 на 8080, чтобы приложение было доступно по адресу _http://[сервер_IP_или_домен]_  
 `sudo iptables -A PREROUTING -t nat -p tcp --dport 80 -j REDIRECT --to-ports 8080`

@@ -1,8 +1,7 @@
 .idea
 out
+doc
 target
 *.iml
 log
 *.patch
-
-
